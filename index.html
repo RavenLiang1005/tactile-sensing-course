@@ -3,156 +3,290 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="触觉传感器和机器人灵巧操作课程主页：课程大纲、论文、开源代码与实验资源。">
+  <meta name="description" content="《触觉传感器和机器人灵巧操作》课程资料、论文与开源项目。">
   <title>触觉传感器和机器人灵巧操作</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Noto+Sans+SC:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="返回首页">
-      <span class="brand-mark">TACTILE<span>LAB</span></span>
-      <span class="brand-sub">COURSE / 2026</span>
-    </a>
-    <nav aria-label="主导航">
-      <a href="#roadmap">课程路线</a>
-      <a href="#syllabus">课程内容</a>
-      <a href="#resources">资源库</a>
-      <a href="#project">课程项目</a>
+  <header class="topbar">
+    <a class="site-name" href="#top">触觉传感器和机器人灵巧操作</a>
+    <nav aria-label="页面导航">
+      <a href="#sensors">Sensors</a>
+      <a href="#visuotactile">Visuotactile</a>
+      <a href="#simulation">Simulation</a>
+      <a href="#manipulation">Manipulation</a>
     </nav>
-    <a class="header-cta" href="https://github.com/" target="_blank" rel="noreferrer">GitHub ↗</a>
+    <a class="github-link" href="https://github.com/RavenLiang1005/tactile-sensing-course" target="_blank" rel="noreferrer">GitHub ↗</a>
   </header>
 
   <main id="top">
     <section class="hero">
-      <div class="hero-copy">
-        <p class="eyebrow"><span></span> 从接触图像到灵巧操作</p>
-        <h1>让机器人<br><em>真正感到</em><br>它触碰的世界</h1>
-        <p class="hero-intro">一门连接传感器设计、触觉成像、力学建模与机器人闭环控制的实践型课程。</p>
-        <div class="hero-actions">
-          <a class="button primary" href="#syllabus">查看 6 次课程 <span>↓</span></a>
-          <a class="button ghost" href="#resources">浏览开放资源</a>
-        </div>
-        <dl class="hero-stats">
-          <div><dt>06</dt><dd>专题课程</dd></div>
-          <div><dt>2:1</dt><dd>理论 / 实践</dd></div>
-          <div><dt>20+</dt><dd>论文与 Demo</dd></div>
-        </dl>
+      <p class="venue">OPEN COURSE · ROBOTICS & EMBODIED AI</p>
+      <h1>触觉传感器和<br>机器人灵巧操作</h1>
+      <p class="abstract">
+        从接触信号的物理转换出发，理解视触觉传感器的成像、结构、标定与数据采集，
+        并进一步探索触觉仿真、多模态融合和接触丰富的机器人灵巧操作。
+      </p>
+      <div class="hero-links">
+        <a class="primary-button" href="#overview">Explore topics</a>
+        <a href="《触觉传感器和机器人灵巧操作》课程大纲.docx">Course syllabus ↓</a>
+        <a href="https://github.com/RavenLiang1005/tactile-sensing-course" target="_blank" rel="noreferrer">Code & resources ↗</a>
       </div>
-      <div class="hero-visual" aria-label="视触觉传感器接触形变示意图">
-        <div class="sensor-stage">
-          <div class="scan-line"></div>
-          <div class="sensor-ring ring-1"></div>
-          <div class="sensor-ring ring-2"></div>
-          <div class="sensor-ring ring-3"></div>
-          <div class="contact-core">
-            <span></span><span></span><span></span><span></span>
+    </section>
+
+    <section id="overview" class="overview">
+      <p class="section-label">OVERVIEW</p>
+      <div class="topic-map">
+        <a href="#sensors"><span>01</span>触觉传感器</a>
+        <a href="#visuotactile"><span>02</span>视触觉原理</a>
+        <a href="#hardware"><span>03</span>传感器构成</a>
+        <a href="#calibration"><span>04</span>标定与采集</a>
+        <a href="#simulation"><span>05</span>触觉仿真</a>
+        <a href="#manipulation"><span>06</span>灵巧操作融合</a>
+      </div>
+    </section>
+
+    <section id="sensors" class="content-section">
+      <div class="section-intro">
+        <p class="section-label">01 · TACTILE SENSORS</p>
+        <h2>触觉传感器</h2>
+        <p>触觉传感器把压力、形变、振动或接触引起的其他物理变化转换为可计算信号。不同机制在柔性、分辨率、频率响应和集成成本之间做出不同取舍。</p>
+      </div>
+      <div class="sensor-types">
+        <article>
+          <span class="type-index">A</span>
+          <h3>压阻式</h3>
+          <p>Piezoresistive</p>
+          <div class="mini-figure resistance"><i></i><i></i><i></i></div>
+          <ul><li>阻值随压力或应变变化</li><li>电路简单、成本较低</li><li>存在迟滞与温漂</li></ul>
+        </article>
+        <article>
+          <span class="type-index">B</span>
+          <h3>电容式</h3>
+          <p>Capacitive</p>
+          <div class="mini-figure capacitor"><i></i><i></i></div>
+          <ul><li>极板间距或面积改变</li><li>灵敏度高、功耗低</li><li>易受寄生电容干扰</li></ul>
+        </article>
+        <article>
+          <span class="type-index">C</span>
+          <h3>压电式</h3>
+          <p>Piezoelectric</p>
+          <div class="mini-figure piezo">⌁⌁⌁</div>
+          <ul><li>受力后产生电荷</li><li>动态响应和带宽较高</li><li>不适合静态力测量</li></ul>
+        </article>
+        <article class="highlight-card">
+          <span class="type-index">D</span>
+          <h3>视触觉</h3>
+          <p>Vision-based tactile</p>
+          <div class="mini-figure optical"><i></i><b></b></div>
+          <ul><li>相机观测弹性体形变</li><li>空间分辨率高、信息丰富</li><li>需要处理光学与材料非线性</li></ul>
+        </article>
+      </div>
+      <div class="reading-row">
+        <span>FOUNDATIONAL READING</span>
+        <a href="https://doi.org/10.1109/TRO.2009.2033627" target="_blank" rel="noreferrer">
+          Dahiya et al. Tactile Sensing—From Humans to Humanoids. <em>IEEE T-RO, 2010</em> ↗
+        </a>
+      </div>
+    </section>
+
+    <section id="visuotactile" class="content-section alt">
+      <div class="section-intro">
+        <p class="section-label">02 · PRINCIPLE</p>
+        <h2>视触觉的组成原理</h2>
+        <p>视触觉传感器用相机观测柔性介质的接触形变。通过表面明暗、彩色光照或标记点位移，可以恢复接触几何、剪切、滑移和力分布。</p>
+      </div>
+      <div class="principle-grid">
+        <div class="exploded-view" aria-label="视触觉传感器结构示意">
+          <div class="layer object"><span>Object</span></div>
+          <div class="arrow-down">↓ contact</div>
+          <div class="layer gel"><span>Reflective elastomer</span></div>
+          <div class="light-rays"><i></i><i></i><i></i></div>
+          <div class="layer leds"><span>RGB illumination</span></div>
+          <div class="layer camera"><b>●</b><span>Camera</span></div>
+        </div>
+        <div class="pipeline">
+          <div><span>01</span><strong>接触形变</strong><p>物体压入柔性弹性体，局部表面几何发生变化。</p></div>
+          <div><span>02</span><strong>光学编码</strong><p>不同方向的光照把表面法向编码为颜色与亮度。</p></div>
+          <div><span>03</span><strong>图像采集</strong><p>相机获得高分辨率接触图像或标记点运动。</p></div>
+          <div><span>04</span><strong>物理量恢复</strong><p>通过光度立体、光流或学习模型估计形状与力。</p></div>
+        </div>
+      </div>
+
+      <article class="case-study">
+        <div class="case-title">
+          <p>CASE STUDY</p>
+          <h3>GelSight</h3>
+          <span>High-resolution geometry + slip sensing</span>
+        </div>
+        <div class="gelsight-demo">
+          <div class="contact-map">
+            <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
           </div>
-          <div class="vector v1"></div>
-          <div class="vector v2"></div>
-          <div class="vector v3"></div>
-          <div class="data-label label-a">F<sub>N</sub> 2.41 N</div>
-          <div class="data-label label-b">Δx 0.86 mm</div>
-          <div class="data-label label-c">CONTACT / STABLE</div>
+          <small>TACTILE IMAGE / NORMAL FIELD</small>
         </div>
-        <p class="visual-caption">LIVE CONTACT FIELD <span>●</span> 60 FPS</p>
-      </div>
+        <div class="case-copy">
+          <p>GelSight 在透明弹性体表面覆盖反射膜，并使用多方向彩色照明。接触图像可通过光度立体恢复微米级表面几何；标记点运动还能用于三维力与初始滑移估计。</p>
+          <div class="paper-links">
+            <a href="https://arxiv.org/abs/1708.00922" target="_blank" rel="noreferrer">Paper ↗</a>
+            <a href="https://www.gelsight.com/" target="_blank" rel="noreferrer">Project ↗</a>
+            <a href="https://github.com/gelsightinc" target="_blank" rel="noreferrer">Code ↗</a>
+          </div>
+        </div>
+      </article>
     </section>
 
-    <section class="manifesto">
-      <p>视觉告诉机器人<strong>物体在哪里</strong>，</p>
-      <p>触觉告诉机器人<strong>接触正在发生什么</strong>。</p>
-    </section>
-
-    <section id="roadmap" class="section roadmap-section">
-      <div class="section-heading">
-        <p class="kicker">LEARNING PATH / 学习路线</p>
-        <h2>从原理出发，<br>在接触中闭环</h2>
+    <section id="hardware" class="content-section">
+      <div class="section-intro">
+        <p class="section-label">03 · HARDWARE</p>
+        <h2>视触觉的基本构成</h2>
+        <p>典型系统由弹性接触层、光学编码、照明、成像和机械外壳组成。下面五类代表工作展示了平面、指尖、无标记、双目与高密度重建等设计路线。</p>
       </div>
-      <div class="roadmap">
+      <div class="paper-grid">
         <article>
-          <span class="step">01</span>
-          <div class="roadmap-icon">◌</div>
-          <h3>建立感知</h3>
-          <p>理解触觉物理量、传感器类型与机器人灵巧操作问题。</p>
+          <div class="paper-meta"><span>2023</span><span>SHAPE · 6D FORCE</span></div>
+          <h3>9DTact</h3>
+          <p>利用半透明凝胶的光学与形变特性，无需辅助标记即可进行三维形状重建与六维力估计。</p>
+          <a href="https://arxiv.org/abs/2308.14277" target="_blank" rel="noreferrer">Paper</a>
+          <a href="https://linchangyi1.github.io/9DTact/" target="_blank" rel="noreferrer">Project</a>
         </article>
         <article>
-          <span class="step">02</span>
-          <div class="roadmap-icon">◎</div>
-          <h3>看见接触</h3>
-          <p>拆解视触觉结构，掌握光学成像与弹性体形变机制。</p>
+          <div class="paper-meta"><span>2022</span><span>STEREO · FORCE FIELD</span></div>
+          <h3>Tac3D</h3>
+          <p>通过虚拟双目视觉恢复三维接触表面、接触力分布，并进一步估计局部摩擦系数。</p>
+          <a href="https://arxiv.org/abs/2202.06211" target="_blank" rel="noreferrer">Paper</a>
         </article>
         <article>
-          <span class="step">03</span>
-          <div class="roadmap-icon">⌁</div>
-          <h3>重建形变</h3>
-          <p>从原始图像提取接触区域、位移场、深度与力。</p>
+          <div class="paper-meta"><span>2021</span><span>SHAPE · FORCE · SLIP</span></div>
+          <h3>GelSlim 3.0</h3>
+          <p>面向夹爪集成的紧凑型手指，同时测量高分辨率形状、三维力分布和初始滑移。</p>
+          <a href="https://arxiv.org/abs/2103.12269" target="_blank" rel="noreferrer">Paper</a>
+          <a href="https://github.com/mcubelab/gelslim" target="_blank" rel="noreferrer">Code</a>
         </article>
         <article>
-          <span class="step">04</span>
-          <div class="roadmap-icon">↻</div>
-          <h3>驱动操作</h3>
-          <p>让触觉进入控制闭环，完成抓取、滑移检测与精密操作。</p>
+          <div class="paper-meta"><span>2020</span><span>COMPACT · OPEN SOURCE</span></div>
+          <h3>DIGIT</h3>
+          <p>低成本、紧凑且制造流程可复现，可安装在多指灵巧手上，适合学习型操作研究。</p>
+          <a href="https://arxiv.org/abs/2005.14679" target="_blank" rel="noreferrer">Paper</a>
+          <a href="https://github.com/facebookresearch/digit-interface" target="_blank" rel="noreferrer">Code</a>
+        </article>
+        <article>
+          <div class="paper-meta"><span>2022</span><span>CURVED · DENSE DEPTH</span></div>
+          <h3>DenseTact</h3>
+          <p>采用鱼眼相机和曲面软凝胶，通过卷积网络实时恢复高密度三维表面形变。</p>
+          <a href="https://arxiv.org/abs/2201.01367" target="_blank" rel="noreferrer">Paper</a>
+          <a href="https://github.com/armlabstanford/densetact" target="_blank" rel="noreferrer">Code</a>
         </article>
       </div>
     </section>
 
-    <section id="syllabus" class="section syllabus-section">
-      <div class="section-heading horizontal">
-        <div>
-          <p class="kicker">SYLLABUS / 课程内容</p>
-          <h2>六次课，一条完整链路</h2>
-        </div>
-        <p>前四次课建立理论与方法基础，后两次课完成传感器实物和仿真操作实验。</p>
+    <section id="calibration" class="content-section alt">
+      <div class="section-intro">
+        <p class="section-label">04 · CALIBRATION & DATA</p>
+        <h2>标定与数据采集流程</h2>
+        <p>标定的目标是建立“图像变化—几何形变—接触力”之间的可重复映射。采集流程必须同时控制接触位置、姿态、深度、速度与外部真值。</p>
       </div>
-      <div class="phase-label"><span>PHASE 01</span> 触觉感知与视触觉理论基础 <i>约 2/3</i></div>
-      <div id="course-list" class="course-list"></div>
-      <div class="phase-label practice"><span>PHASE 02</span> 触觉传感与机器人灵巧操作实践 <i>约 1/3</i></div>
-      <div id="practice-list" class="course-list"></div>
+      <ol class="workflow">
+        <li><span>01</span><div><h3>传感器准备</h3><p>固定曝光、白平衡与光源；采集无接触背景，检查弹性体和标记点状态。</p></div></li>
+        <li><span>02</span><div><h3>几何标定</h3><p>相机内参和畸变校正；用已知球体、平面或压头建立像素到表面坐标的映射。</p></div></li>
+        <li><span>03</span><div><h3>光学 / 位移标定</h3><p>拟合 RGB 强度与表面法向，或检测标记点并计算二维、三维位移场。</p></div></li>
+        <li><span>04</span><div><h3>力标定</h3><p>与六维力传感器同步，覆盖不同位置、方向和载荷，学习形变到力的映射。</p></div></li>
+        <li><span>05</span><div><h3>数据集采集</h3><p>同步保存图像、机器人位姿、力/力矩和标签，并按物体或实验批次划分数据集。</p></div></li>
+        <li><span>06</span><div><h3>质量评估</h3><p>检查重复性、迟滞、漂移和跨位置误差，报告深度、力、接触位置与任务指标。</p></div></li>
+      </ol>
+      <div class="references">
+        <h3>Related references</h3>
+        <a href="https://arxiv.org/abs/2308.14277" target="_blank" rel="noreferrer"><b>9DTact</b><span>约 100k 图像—力样本与可泛化六维力估计</span><i>↗</i></a>
+        <a href="https://arxiv.org/abs/2103.12269" target="_blank" rel="noreferrer"><b>GelSlim 3.0</b><span>解析式形状、力和滑移测量流程</span><i>↗</i></a>
+        <a href="https://arxiv.org/abs/2506.08291" target="_blank" rel="noreferrer"><b>TensorTouch</b><span>结合有限元与学习的应力张量、形变和力标定</span><i>↗</i></a>
+      </div>
     </section>
 
-    <section id="resources" class="section resources-section">
-      <div class="section-heading horizontal">
-        <div>
-          <p class="kicker">OPEN RESOURCES / 开放资源</p>
-          <h2>继续探索，不止于课堂</h2>
-        </div>
-        <div class="filters" role="group" aria-label="资源筛选">
-          <button class="active" data-filter="all">全部</button>
-          <button data-filter="paper">论文</button>
-          <button data-filter="code">代码</button>
-          <button data-filter="demo">Demo</button>
-        </div>
+    <section id="simulation" class="content-section dark">
+      <div class="section-intro">
+        <p class="section-label">05 · SIMULATION</p>
+        <h2>触觉仿真</h2>
+        <p>触觉仿真需要同时近似接触力学、软材料形变、光照和成像。它用于低成本数据生成、策略训练、传感器设计与 Sim-to-Real 验证。</p>
       </div>
-      <div id="resource-grid" class="resource-grid"></div>
+      <div class="simulation-flow">
+        <div><span>PHYSICS</span><strong>接触与形变</strong><small>pose · force · mesh</small></div>
+        <i>→</i>
+        <div><span>RENDERING</span><strong>光学与成像</strong><small>light · gel · camera</small></div>
+        <i>→</i>
+        <div><span>LEARNING</span><strong>感知与策略</strong><small>depth · force · action</small></div>
+        <i>→</i>
+        <div><span>TRANSFER</span><strong>真实机器人</strong><small>calibration · adaptation</small></div>
+      </div>
+      <div class="sim-cards">
+        <article><span>2020</span><h3>TACTO</h3><p>灵活的开源视触觉渲染器，可模拟 DIGIT 与 OmniTact，并连接 PyBullet。</p><a href="https://arxiv.org/abs/2012.08456">Paper ↗</a><a href="https://github.com/facebookresearch/tacto">Code ↗</a></article>
+        <article><span>2021</span><h3>Taxim</h3><p>面向 GelSight 的高速触觉图像模拟，分离几何、光照与标记点运动建模。</p><a href="https://arxiv.org/abs/2109.04027">Paper ↗</a></article>
+        <article><span>2024</span><h3>TacSL</h3><p>基于 GPU 的视触觉仿真与学习库，支持高速力分布提取和策略 Sim-to-Real。</p><a href="https://arxiv.org/abs/2408.06506">Paper ↗</a><a href="https://iakinola23.github.io/tacsl/">Project ↗</a></article>
+        <article><span>2023</span><h3>DiffTactile</h3><p>面向接触丰富任务的可微分触觉仿真，可联合优化物理参数与控制策略。</p><a href="https://difftactile.github.io/">Project ↗</a></article>
+      </div>
     </section>
 
-    <section id="project" class="project-section">
-      <div>
-        <p class="kicker">FINAL PROJECT / 课程项目</p>
-        <h2>设计一次<br>有感觉的操作</h2>
+    <section id="manipulation" class="content-section">
+      <div class="section-intro">
+        <p class="section-label">06 · DEXTEROUS MANIPULATION</p>
+        <h2>触觉与灵巧操作融合</h2>
+        <p>触觉不是操作后的附加判断，而是闭环策略的一部分。它补充视觉遮挡下的接触状态，并支持滑移检测、握力调节、物体状态估计和手内操作。</p>
       </div>
-      <div class="project-brief">
-        <p>小组完成一个触觉辅助机器人操作任务，并用实验回答：</p>
-        <ol>
-          <li><span>01</span>没有触觉时，系统在哪里失败？</li>
-          <li><span>02</span>哪种触觉信息最关键？</li>
-          <li><span>03</span>触觉如何改变机器人的下一步动作？</li>
-        </ol>
-        <a class="button light" href="#course-6">查看综合实验要求 <span>→</span></a>
+      <div class="fusion-diagram">
+        <div class="modalities">
+          <span>Vision<small>shape · pose</small></span>
+          <span>Tactile<small>contact · slip</small></span>
+          <span>Proprioception<small>joint · torque</small></span>
+        </div>
+        <div class="fusion-core">MULTIMODAL<br><b>FUSION</b></div>
+        <div class="actions">
+          <span>State estimation</span>
+          <span>Policy learning</span>
+          <span>Closed-loop action</span>
+        </div>
       </div>
+      <div class="manipulation-grid">
+        <article>
+          <p>VISUOTACTILE LEARNING · 2021</p>
+          <h3>VTT</h3>
+          <span>Visuo-Tactile Transformer 面向表征学习与机器人操作，将视觉和触觉 token 统一建模。</span>
+          <a href="https://arxiv.org/abs/2110.03985" target="_blank" rel="noreferrer">Read paper ↗</a>
+        </article>
+        <article>
+          <p>TACTILE-ONLY · 2023</p>
+          <h3>TacGNN</h3>
+          <span>用图神经网络从触觉阵列估计物体状态，并在无视觉条件下完成双球手内操作。</span>
+          <a href="https://arxiv.org/abs/2304.00736" target="_blank" rel="noreferrer">Read paper ↗</a>
+        </article>
+        <article>
+          <p>SIM-TO-REAL · 2023</p>
+          <h3>In-hand Manipulation</h3>
+          <span>利用触觉接触位置、强化学习和域随机化，实现细长物体连续轨迹控制。</span>
+          <a href="https://arxiv.org/abs/2304.05141" target="_blank" rel="noreferrer">Read paper ↗</a>
+        </article>
+        <article>
+          <p>BENCHMARK · 2026</p>
+          <h3>TacO</h3>
+          <span>从真实物体操作任务系统比较不同触觉传感原理与感知能力。</span>
+          <a href="https://arxiv.org/abs/2605.21976" target="_blank" rel="noreferrer">Read paper ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing">
+      <p>COURSE GOAL</p>
+      <h2>从一次接触，<br>到一次可靠的动作。</h2>
+      <a href="#top">Back to top ↑</a>
     </section>
   </main>
 
   <footer>
-    <div class="brand-mark">TACTILE<span>LAB</span></div>
-    <p>触觉传感器和机器人灵巧操作 · 开放课程主页</p>
-    <a href="#top">BACK TO TOP ↑</a>
+    <span>触觉传感器和机器人灵巧操作</span>
+    <span>Course resources · 2026</span>
+    <a href="https://github.com/RavenLiang1005/tactile-sensing-course">GitHub ↗</a>
   </footer>
-
   <script src="app.js"></script>
 </body>
 </html>
