@@ -210,6 +210,39 @@ h2 { margin: 0; font-size: clamp(38px, 5vw, 76px); line-height: 1.06; letter-spa
 .course-links small { font: 500 9px "DM Mono", monospace; color: var(--blue); }
 .course-links b { font-weight: 500; }
 .course-links a:hover b { text-decoration: underline; }
+.toolkit-section { background: var(--paper-2); border-block: 1px solid var(--line); }
+.sim-order {
+  margin: -40px 0 44px; padding: 16px 20px; border: 1px dashed var(--line);
+  font-size: 14px; line-height: 1.9;
+}
+.sim-order span {
+  margin-right: 14px; padding: 5px 10px; background: var(--ink); color: white;
+  font: 500 10px "DM Mono", monospace; letter-spacing: .06em;
+}
+.sim-order b { font-weight: 700; border-bottom: 3px solid var(--acid); }
+.sim-order i { font-style: normal; margin: 0 6px; color: var(--coral); }
+.sim-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.sim-card { display: flex; flex-direction: column; padding: 32px 28px; background: var(--paper); }
+.sim-level {
+  align-self: flex-start; padding: 5px 11px; font: 500 10px "DM Mono", monospace; letter-spacing: .06em;
+}
+.sim-level.easy { background: var(--acid); color: var(--ink); }
+.sim-level.mid { background: var(--blue); color: white; }
+.sim-card h3 { margin: 18px 0 8px; font-size: 32px; letter-spacing: -.04em; }
+.sim-tagline { margin: 0; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.sim-block { margin-top: 24px; }
+.sim-block h4 { margin: 0 0 13px; font: 500 11px "DM Mono", monospace; letter-spacing: .06em; color: var(--coral); }
+.sim-block ul { margin: 0; padding: 0; list-style: none; display: grid; gap: 9px; }
+.sim-block li { position: relative; padding-left: 19px; font-size: 13px; line-height: 1.65; color: #3f403a; }
+.sim-block ul.feat li::before { content: "→"; position: absolute; left: 0; color: var(--blue); }
+.sim-block ul.req li::before { content: ""; position: absolute; left: 2px; top: 9px; width: 5px; height: 5px; background: var(--coral); }
+.sim-bestfor { margin: 26px 0 0; padding: 14px 16px; background: var(--paper-2); font-size: 13px; line-height: 1.75; }
+.sim-links { margin-top: auto; padding-top: 24px; display: flex; gap: 10px; }
+.sim-links a {
+  flex: 1; text-align: center; padding: 12px; border: 1px solid var(--ink);
+  font: 500 12px "DM Mono", monospace; transition: background .2s, color .2s;
+}
+.sim-links a:hover { background: var(--ink); color: white; }
 .resources-section { background: var(--ink); color: white; }
 .resources-section h2 { color: white; }
 .filters { display: flex; gap: 7px; }
@@ -251,6 +284,7 @@ footer a { font-family: "DM Mono", monospace; }
   .roadmap article { border-bottom: 1px solid var(--line); }
   .course-content { grid-template-columns: 1fr; padding-left: 8px; }
   .resource-grid { grid-template-columns: 1fr 1fr; }
+  .sim-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 600px) {
   .brand-sub, .header-cta { display: none; }
@@ -274,6 +308,8 @@ footer a { font-family: "DM Mono", monospace; }
   .course-content { padding-bottom: 35px; }
   .phase-label i { display: none; }
   .filters { margin-top: 25px; }
+  .sim-order { margin-top: -20px; }
+  .sim-order span { display: inline-block; margin-bottom: 10px; }
   .resource-grid { grid-template-columns: 1fr; }
   .project-section { grid-template-columns: 1fr; }
   footer { flex-direction: column; gap: 18px; text-align: center; }

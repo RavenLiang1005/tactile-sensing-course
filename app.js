@@ -79,7 +79,13 @@ const courses = [
       ["代码", "TACTO：开源视触觉仿真器", "https://github.com/facebookresearch/tacto"],
       ["Demo", "TACTO PyBullet DIGIT 示例", "https://github.com/facebookresearch/tacto/blob/main/examples/demo_pybullet_digit.py"],
       ["代码", "Tactile Gym 2.0", "https://github.com/ac-93/tactile_gym"],
-      ["Demo", "DiffTactile 项目与视频", "https://difftactile.github.io/"]
+      ["Demo", "DiffTactile 项目与视频", "https://difftactile.github.io/"],
+      ["论文", "TacEx：Isaac Sim 中的 GelSight 触觉仿真", "https://arxiv.org/abs/2411.04776"],
+      ["代码", "TacEx：Isaac Sim/Isaac Lab 触觉扩展", "https://github.com/DH-Ng/TacEx"],
+      ["论文", "TacSL：视触觉传感器仿真与学习库", "https://arxiv.org/abs/2408.06506"],
+      ["代码", "TacSL：IsaacGymEnvs tacsl 分支", "https://github.com/isaac-sim/IsaacGymEnvs/tree/tacsl"],
+      ["论文", "Taxim：基于样例的 GelSight 仿真模型", "https://arxiv.org/abs/2109.04027"],
+      ["代码", "Taxim：官方开源实现", "https://github.com/Robo-Touch/Taxim"]
     ]
   }
 ];
@@ -93,8 +99,98 @@ const resources = [
   { type: "demo", label: "DEMO / PHYSICS", title: "DiffTactile", desc: "面向接触丰富操作的物理可微分触觉仿真系统。", year: "PROJECT", url: "https://difftactile.github.io/" },
   { type: "code", label: "CODE / RL", title: "Tactile Gym 2.0", desc: "触觉强化学习与 Sim2Real 实验环境，涵盖推、循边和表面跟随。", year: "GITHUB", url: "https://github.com/ac-93/tactile_gym" },
   { type: "demo", label: "DEMO / VISION", title: "OpenCV Optical Flow", desc: "可直接复现的稀疏与稠密光流教程，用于标记点位移分析。", year: "DOCS", url: "https://docs.opencv.org/4.x/d4/dee/tutorial_optical_flow.html" },
-  { type: "paper", label: "PAPER / BENCHMARK", title: "TacO", desc: "从操作任务角度比较视觉、声学、磁学与电阻式触觉传感器。", year: "2026", url: "https://arxiv.org/abs/2605.21976" }
+  { type: "paper", label: "PAPER / BENCHMARK", title: "TacO", desc: "从操作任务角度比较视觉、声学、磁学与电阻式触觉传感器。", year: "2026", url: "https://arxiv.org/abs/2605.21976" },
+  { type: "paper", label: "PAPER / SIMULATOR", title: "Taxim", desc: "基于样例的 GelSight 光学与标记点仿真模型，少量真实数据即可标定。", year: "2022", url: "https://arxiv.org/abs/2109.04027" },
+  { type: "code", label: "CODE / SIMULATOR", title: "Taxim Code", desc: "Taxim 官方开源实现，含标定流程与触觉图像渲染示例。", year: "GITHUB", url: "https://github.com/Robo-Touch/Taxim" },
+  { type: "paper", label: "PAPER / SIMULATOR", title: "TacSL", desc: "GPU 加速的视触觉仿真与学习库，比此前方法快 200 倍并支持 Sim2Real。", year: "2024", url: "https://arxiv.org/abs/2408.06506" },
+  { type: "code", label: "CODE / SIMULATOR", title: "TacSL Code", desc: "TacSL 策略学习工具包（IsaacGymEnvs tacsl 分支），官方版将并入 Isaac Lab。", year: "GITHUB", url: "https://github.com/isaac-sim/IsaacGymEnvs/tree/tacsl" },
+  { type: "paper", label: "PAPER / SIMULATOR", title: "TacEx", desc: "在 Isaac Sim 中结合软体与视触觉仿真的 GelSight Mini 模块化框架。", year: "2024", url: "https://arxiv.org/abs/2411.04776" },
+  { type: "code", label: "CODE / SIMULATOR", title: "TacEx Code", desc: "TacEx 的 Isaac Sim/Isaac Lab 触觉扩展，集成 Taxim、FOTS 与 UIPC。", year: "GITHUB", url: "https://github.com/DH-Ng/TacEx" }
 ];
+
+const simulators = [
+  {
+    name: "Taxim",
+    level: "入门友好",
+    levelClass: "easy",
+    tagline: "用一张高度图换一张触觉图，最轻量的 GelSight 仿真。",
+    features: [
+      "基于样例：用多项式查找表把表面形变直接映射成触觉 RGB 图像",
+      "同时仿真标记点位移场，可用于剪切与滑移分析",
+      "标定只需真实传感器约 100 个数据点，易迁移到其他 GelSight 变体"
+    ],
+    requirements: [
+      "纯 Python，CPU 即可运行，无需专用物理引擎",
+      "依赖 NumPy / SciPy，pip 安装即可（可选 GPU 版用 PyTorch / JAX）",
+      "普通笔记本电脑就能跑，非常适合课堂演示"
+    ],
+    bestFor: "第一次接触触觉仿真，理解“形变 → 图像”的成像原理与数据增强。",
+    links: [["论文", "https://arxiv.org/abs/2109.04027"], ["代码", "https://github.com/Robo-Touch/Taxim"]]
+  },
+  {
+    name: "TacEx",
+    level: "进阶",
+    levelClass: "mid",
+    tagline: "在 Isaac Sim 里把软体物理和视触觉渲染拼装到一起。",
+    features: [
+      "模块化框架：软体仿真(UIPC / GIPC) + 视触觉渲染(Taxim、FOTS) 可自由组合",
+      "输出凝胶形变、GelSight RGB 图像与标记点流场",
+      "内置 Isaac Lab 强化学习环境（推动、抓取提起、平衡杆）",
+      "目前支持 GelSight Mini，可扩展自定义传感器"
+    ],
+    requirements: [
+      "NVIDIA Isaac Sim ≥ 2024.1 + Isaac Lab ≥ 0.5（仅 Linux）",
+      "NVIDIA 显卡，≥ 12GB 显存（运行 16+ 并行环境）",
+      "约 16 核 CPU 跑标记点仿真，Taxim 内核需 PyTorch 1.13",
+      "当前为预览版，文档仍在完善中"
+    ],
+    bestFor: "想对比不同仿真方法、研究软接触 + 强化学习的进阶用户。",
+    links: [["论文", "https://arxiv.org/abs/2411.04776"], ["代码", "https://github.com/DH-Ng/TacEx"]]
+  },
+  {
+    name: "TacSL",
+    level: "进阶",
+    levelClass: "mid",
+    tagline: "GPU 大规模并行的视触觉仿真与策略学习库。",
+    features: [
+      "GPU 加速，触觉图像与接触力场生成比此前方法快约 200 倍",
+      "同时输出 RGB 触觉图、法向力场与切向力场",
+      "自带学习工具包：多种传感器模型、接触密集环境、在线 / 离线算法",
+      "提出 AACD 算法，面向真机迁移（Sim2Real）"
+    ],
+    requirements: [
+      "NVIDIA 显卡 + CUDA（Linux），适合大规模并行训练",
+      "当前预览基于已弃用的 Isaac Gym（IsaacGymEnvs 的 tacsl 分支）",
+      "官方正式版将并入 Isaac Lab",
+      "需要一定的强化学习与 Isaac 生态基础"
+    ],
+    bestFor: "做大规模触觉强化学习、力场学习与真机迁移的进阶项目。",
+    links: [["论文", "https://arxiv.org/abs/2408.06506"], ["代码", "https://github.com/isaac-sim/IsaacGymEnvs/tree/tacsl"]]
+  }
+];
+
+function simulatorTemplate(sim) {
+  return `
+    <article class="sim-card">
+      <span class="sim-level ${sim.levelClass}">${sim.level}</span>
+      <h3>${sim.name}</h3>
+      <p class="sim-tagline">${sim.tagline}</p>
+      <div class="sim-block">
+        <h4>特色亮点</h4>
+        <ul class="feat">${sim.features.map(f => `<li>${f}</li>`).join("")}</ul>
+      </div>
+      <div class="sim-block">
+        <h4>配置要求</h4>
+        <ul class="req">${sim.requirements.map(r => `<li>${r}</li>`).join("")}</ul>
+      </div>
+      <p class="sim-bestfor"><strong>适合：</strong>${sim.bestFor}</p>
+      <div class="sim-links">
+        ${sim.links.map(([type, url]) => `<a href="${url}" target="_blank" rel="noreferrer">${type} ↗</a>`).join("")}
+      </div>
+    </article>`;
+}
+
+document.querySelector("#sim-grid").innerHTML = simulators.map(simulatorTemplate).join("");
 
 function courseTemplate(course) {
   const links = course.links.map(([type, title, url]) =>
