@@ -33,7 +33,6 @@
       <div class="hero-links">
         <a class="primary-button" href="#overview">Explore topics</a>
         <a href="《触觉传感器和机器人灵巧操作》课程大纲.docx">Course syllabus ↓</a>
-        <a href="https://github.com/RavenLiang1005/tactile-sensing-course" target="_blank" rel="noreferrer">Code & resources ↗</a>
       </div>
     </section>
 
@@ -97,17 +96,13 @@
       <div class="section-intro">
         <p class="section-label">02 · PRINCIPLE</p>
         <h2>视触觉的组成原理</h2>
-        <p>视触觉传感器用相机观测柔性介质的接触形变。通过表面明暗、彩色光照或标记点位移，可以恢复接触几何、剪切、滑移和力分布。</p>
+        <p>下面展示一个典型的视触觉组成与成像原理示例：相机观测柔性介质的接触形变，并通过多方向光照编码表面法向。不同传感器也可能采用标记点、双目视觉或其他光学结构。</p>
       </div>
       <div class="principle-grid">
-        <div class="exploded-view" aria-label="视触觉传感器结构示意">
-          <div class="layer object"><span>Object</span></div>
-          <div class="arrow-down">↓ contact</div>
-          <div class="layer gel"><span>Reflective elastomer</span></div>
-          <div class="light-rays"><i></i><i></i><i></i></div>
-          <div class="layer leds"><span>RGB illumination</span></div>
-          <div class="layer camera"><b>●</b><span>Camera</span></div>
-        </div>
+        <figure class="principle-figure">
+          <img src="photometric principle.png" alt="典型视触觉传感器组成与光度立体成像原理示例">
+          <figcaption>一个典型的视触觉组成与光度立体成像原理示例</figcaption>
+        </figure>
         <div class="pipeline">
           <div><span>01</span><strong>接触形变</strong><p>物体压入柔性弹性体，局部表面几何发生变化。</p></div>
           <div><span>02</span><strong>光学编码</strong><p>不同方向的光照把表面法向编码为颜色与亮度。</p></div>
