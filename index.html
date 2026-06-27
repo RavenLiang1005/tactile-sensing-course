@@ -18,6 +18,7 @@
       <a href="#visuotactile">Visuotactile</a>
       <a href="#simulation">Simulation</a>
       <a href="#manipulation">Manipulation</a>
+      <a href="#references">References</a>
     </nav>
     <a class="github-link" href="https://github.com/RavenLiang1005/tactile-sensing-course" target="_blank" rel="noreferrer">GitHub ↗</a>
   </header>
@@ -45,6 +46,7 @@
         <a href="#calibration"><span>04</span>标定与采集</a>
         <a href="#simulation"><span>05</span>触觉仿真</a>
         <a href="#manipulation"><span>06</span>灵巧操作融合</a>
+        <a href="#references"><span>07</span>参考文献库</a>
       </div>
     </section>
 
@@ -270,6 +272,148 @@
           <h3>TacO</h3>
           <span>从真实物体操作任务系统比较不同触觉传感原理与感知能力。</span>
           <a href="https://arxiv.org/abs/2605.21976" target="_blank" rel="noreferrer">Read paper ↗</a>
+        </article>
+      </div>
+    </section>
+
+    <section id="references" class="content-section alt reference-section">
+      <div class="section-intro">
+        <p class="section-label">07 · REFERENCES</p>
+        <h2>课程参考文献库</h2>
+        <p>这里汇总了本项目“参考文献”文件夹中的全部论文资料，按“综述、传感器硬件、感知估计、仿真生成、灵巧操作与遥操作”组织，便于课程阅读、报告选题和进一步复现。</p>
+      </div>
+
+      <div class="reference-summary">
+        <article><strong>15</strong><span>PDF papers</span></article>
+        <article><strong>1</strong><span>Text extract</span></article>
+        <article><strong>5</strong><span>Reading themes</span></article>
+      </div>
+
+      <div class="reference-library">
+        <article class="reference-group">
+          <h3>综述与基础</h3>
+          <div class="reference-list">
+            <a class="reference-item" href="参考文献/Tactile Robotics Past and Future.pdf" target="_blank" rel="noreferrer">
+              <span>Review · 2025</span>
+              <strong>Tactile Robotics: Past and Future</strong>
+              <p>从近半个世纪的触觉机器人综述出发，梳理触觉机器人发展的历史阶段、研究主题和未来机会。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/Tactile Robotics Past and Future.txt" target="_blank" rel="noreferrer">
+              <span>Full text extract</span>
+              <strong>Tactile Robotics: Past and Future · TXT</strong>
+              <p>同一综述论文的文本抽取版本，适合检索关键词、快速摘录阅读笔记和整理课程报告引用。</p>
+              <i>TXT</i>
+            </a>
+            <a class="reference-item" href="参考文献/Gelsight.pdf" target="_blank" rel="noreferrer">
+              <span>Foundation</span>
+              <strong>GelSight: High-Resolution Robot Tactile Sensors for Estimating Geometry and Force</strong>
+              <p>介绍 GelSight 视触觉传感器如何通过弹性体、反射膜和彩色光照恢复接触几何与力信息。</p>
+              <i>PDF</i>
+            </a>
+          </div>
+        </article>
+
+        <article class="reference-group">
+          <h3>视触觉传感器与硬件设计</h3>
+          <div class="reference-list">
+            <a class="reference-item" href="参考文献/9DTact_A_Compact_Vision-Based_Tactile_Sensor_for_Accurate_3D_Shape_Reconstruction_and_Generalizable_6D_Force_Estimation.pdf" target="_blank" rel="noreferrer">
+              <span>Sensor · 3D shape · 6D force</span>
+              <strong>9DTact: A Compact Vision-Based Tactile Sensor</strong>
+              <p>低成本紧凑视触觉传感器，支持三维形状重建和可泛化六维力估计，并提供开源硬件与软件。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/M3Tac.pdf" target="_blank" rel="noreferrer">
+              <span>Sensor · multimodal</span>
+              <strong>M3Tac</strong>
+              <p>面向机器人触觉感知的多模态传感设计，可用于讨论触觉硬件如何融合不同接触信息源。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/PneuGelSight Soft Robotic Vision-based Proprioception and Tactile Sensing.pdf" target="_blank" rel="noreferrer">
+              <span>Soft robot · GelSight</span>
+              <strong>PneuGelSight: Soft Robotic Vision-Based Proprioception and Tactile Sensing</strong>
+              <p>把 GelSight 式视觉触觉用于软体机器人，同时感知本体形变与外部接触，是软体结构集成的代表案例。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/Taccel.pdf" target="_blank" rel="noreferrer">
+              <span>Sensor system</span>
+              <strong>Taccel</strong>
+              <p>触觉传感系统相关论文，可作为传感器结构、信号处理或学习接口的补充阅读材料。</p>
+              <i>PDF</i>
+            </a>
+          </div>
+        </article>
+
+        <article class="reference-group">
+          <h3>接触估计与触觉感知算法</h3>
+          <div class="reference-list">
+            <a class="reference-item" href="参考文献/Effective_Estimation_of_Contact_Force_and_Torque_for_Vision-Based_Tactile_Sensors_With_HelmholtzHodge_Decomposition.pdf" target="_blank" rel="noreferrer">
+              <span>Force · torque</span>
+              <strong>Effective Estimation of Contact Force and Torque for Vision-Based Tactile Sensors</strong>
+              <p>利用 Helmholtz-Hodge Decomposition 从视触觉形变中估计接触力和力矩，适合理解力估计建模。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/From_Pixels_to_Percepts_Highly_Robust_Edge_Perception_and_Contour_Following_Using_Deep_Learning_and_an_Optical_Biomimetic_Tactile_Sensor.pdf" target="_blank" rel="noreferrer">
+              <span>Deep learning · contour</span>
+              <strong>From Pixels to Percepts</strong>
+              <p>使用光学生物仿生触觉传感器和深度学习实现鲁棒边缘感知与轮廓跟随。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/Biomimetic multimodal tactile sensing enables human-like robotic perception.pdf" target="_blank" rel="noreferrer">
+              <span>Biomimetic · multimodal</span>
+              <strong>Biomimetic Multimodal Tactile Sensing Enables Human-Like Robotic Perception</strong>
+              <p>通过仿生多模态触觉实现更接近人类的机器人感知能力，可连接材料、结构和感知算法三条线索。</p>
+              <i>PDF</i>
+            </a>
+          </div>
+        </article>
+
+        <article class="reference-group">
+          <h3>仿真、学习与生成</h3>
+          <div class="reference-list">
+            <a class="reference-item" href="参考文献/TacSL_A_Library_for_Visuotactile_Sensor_Simulation_and_Learning.pdf" target="_blank" rel="noreferrer">
+              <span>Simulation · learning</span>
+              <strong>TacSL: A Library for Visuotactile Sensor Simulation and Learning</strong>
+              <p>面向视触觉传感器的仿真与学习库，支持触觉策略学习、仿真数据生成和 Sim-to-Real 研究。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/tactile-dreamfusion-exploiting-tactile-sensing-for-3d-generation-Paper-Conference.pdf" target="_blank" rel="noreferrer">
+              <span>3D generation · NeurIPS 2024</span>
+              <strong>Tactile DreamFusion: Exploiting Tactile Sensing for 3D Generation</strong>
+              <p>把高分辨率触觉法向和纹理引入 3D 生成，用触觉信息增强细粒度几何细节。</p>
+              <i>PDF</i>
+            </a>
+          </div>
+        </article>
+
+        <article class="reference-group">
+          <h3>灵巧操作、抓取与遥操作</h3>
+          <div class="reference-list">
+            <a class="reference-item" href="参考文献/AirTouch_A_Low-Cost_Versatile_Visuotactile_Feedback_System_for_Enhanced_Robotic_Teleoperation.pdf" target="_blank" rel="noreferrer">
+              <span>Teleoperation · IROS 2025</span>
+              <strong>AirTouch: A Low-Cost Versatile Visuotactile Feedback System</strong>
+              <p>通过气压触觉反馈和轻量手势估计增强机器人遥操作，展示低成本触觉反馈系统的工程路线。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/Anytouch v2.pdf" target="_blank" rel="noreferrer">
+              <span>Generalist tactile policy</span>
+              <strong>AnyTouch V2</strong>
+              <p>面向通用触觉操作策略的研究材料，可作为视觉、触觉和本体感知融合学习的延伸阅读。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/PPTac paper picking using tactile feedback in dexterous robotic hands.pdf" target="_blank" rel="noreferrer">
+              <span>Dexterous hand · picking</span>
+              <strong>PPTac: Paper Picking Using Tactile Feedback in Dexterous Robotic Hands</strong>
+              <p>关注灵巧手在纸张等薄物体操作中的触觉反馈使用，适合讨论精细抓取和接触状态判断。</p>
+              <i>PDF</i>
+            </a>
+            <a class="reference-item" href="参考文献/Soft robotic hand with tactile palm-finger coordination.pdf" target="_blank" rel="noreferrer">
+              <span>Soft hand · coordination</span>
+              <strong>Soft Robotic Hand with Tactile Palm-Finger Coordination</strong>
+              <p>研究软体机器人手掌与手指触觉协调，为多接触点抓取、调姿和闭环操作提供案例。</p>
+              <i>PDF</i>
+            </a>
+          </div>
         </article>
       </div>
     </section>
