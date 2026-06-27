@@ -202,7 +202,7 @@ h2 { margin: 0; font-size: clamp(38px, 5vw, 62px); line-height: 1.1; letter-spac
 .reference-section .section-intro { margin-bottom: 45px; }
 .reference-summary {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   margin-bottom: 35px;
   border: 1px solid var(--line);
   background: #fff;
