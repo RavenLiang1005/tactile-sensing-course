@@ -14,6 +14,7 @@
   <header class="topbar">
     <a class="site-name" href="#top">触觉传感器和机器人灵巧操作</a>
     <nav aria-label="页面导航">
+      <a href="#cursor-guide">Cursor</a>
       <a href="#sensors">Sensors</a>
       <a href="#visuotactile">Visuotactile</a>
       <a href="#simulation">Simulation</a>
@@ -24,6 +25,109 @@
   </header>
 
   <main id="top">
+    <section id="cursor-guide" class="cursor-guide">
+      <div class="cursor-guide-inner">
+        <p class="section-label">GETTING STARTED · CURSOR IDE</p>
+        <div class="cursor-guide-header">
+          <h2>Cursor 使用指南</h2>
+          <p>
+            本课程推荐使用 Cursor 作为 AI 辅助编程环境。Cursor 基于 VS Code，内置 Agent 可阅读代码、解释论文配套项目、协助调试与实验。
+            按以下步骤安装并打开本仓库，即可开始学习。
+          </p>
+        </div>
+
+        <ol class="cursor-steps">
+          <li>
+            <span>01</span>
+            <div>
+              <h3>安装并登录</h3>
+              <p>
+                前往 <a href="https://cursor.com/downloads" target="_blank" rel="noreferrer">cursor.com/downloads</a>
+                下载对应系统版本，安装后使用 GitHub 或邮箱登录。
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>02</span>
+            <div>
+              <h3>克隆并打开课程仓库</h3>
+              <p>
+                在终端执行 <code>git clone https://github.com/RavenLiang1005/tactile-sensing-course.git</code>，
+                然后在 Cursor 中选择 <strong>File → Open Folder</strong>，打开克隆下来的目录。
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>03</span>
+            <div>
+              <h3>用 Agent 理解代码库</h3>
+              <p>
+                按 <kbd>⌘</kbd><kbd>I</kbd>（Windows/Linux：<kbd>Ctrl</kbd><kbd>I</kbd>）打开 Agent，
+                输入「解释这个代码库的结构，并指出我应该先读哪些文件」来快速熟悉项目。
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>04</span>
+            <div>
+              <h3>用 @ 引用上下文</h3>
+              <p>
+                在对话中输入 <code>@</code> 可引用文件、文件夹、文档或网页，让 AI 基于你指定的资料回答，
+                例如 <code>@参考文献</code> 或某个开源项目的 README。
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>05</span>
+            <div>
+              <h3>Plan Mode 处理复杂任务</h3>
+              <p>
+                涉及多文件修改或仿真实验搭建时，在 Agent 输入框按 <kbd>Shift</kbd><kbd>Tab</kbd> 切换到 Plan Mode。
+                Cursor 会先调研代码库、提出计划，待你确认后再动手修改。
+              </p>
+            </div>
+          </li>
+          <li>
+            <span>06</span>
+            <div>
+              <h3>审阅改动后再接受</h3>
+              <p>
+                Agent 完成修改后会展示 diff。请逐条检查变更是否符合预期，再点击 Accept；
+                可要求 Cursor 运行项目已有的测试、lint 或本地预览命令来验证结果。
+              </p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="cursor-extras">
+          <article class="cursor-shortcuts">
+            <h3>常用快捷键</h3>
+            <dl>
+              <div><dt>Agent</dt><dd><kbd>⌘</kbd><kbd>I</kbd> / <kbd>Ctrl</kbd><kbd>I</kbd></dd></div>
+              <div><dt>Chat</dt><dd><kbd>⌘</kbd><kbd>L</kbd> / <kbd>Ctrl</kbd><kbd>L</kbd></dd></div>
+              <div><dt>Plan Mode</dt><dd><kbd>Shift</kbd><kbd>Tab</kbd></dd></div>
+              <div><dt>命令面板</dt><dd><kbd>⌘</kbd><kbd>Shift</kbd><kbd>P</kbd> / <kbd>Ctrl</kbd><kbd>Shift</kbd><kbd>P</kbd></dd></div>
+            </dl>
+          </article>
+          <article class="cursor-prompts">
+            <h3>课程推荐提问示例</h3>
+            <ul>
+              <li>「解释 GelSight 的成像原理，并对照本页案例说明。」</li>
+              <li>「帮我梳理 9DTact 与 DIGIT 的结构差异，用表格对比。」</li>
+              <li>「根据参考文献目录，总结触觉仿真领域的三条主流路线。」</li>
+              <li>「我想复现某个开源 Demo，请列出环境依赖和运行步骤。」</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="cursor-links">
+          <a class="primary-button" href="https://cursor.com/docs/get-started/quickstart" target="_blank" rel="noreferrer">Cursor 官方快速入门 ↗</a>
+          <a href="https://cursor.com/docs" target="_blank" rel="noreferrer">完整文档 ↗</a>
+          <a href="#overview">继续浏览课程 ↓</a>
+        </div>
+      </div>
+    </section>
+
     <section class="hero">
       <p class="venue">OPEN COURSE · ROBOTICS & EMBODIED AI</p>
       <h1>触觉传感器和<br>机器人灵巧操作</h1>
@@ -40,6 +144,7 @@
     <section id="overview" class="overview">
       <p class="section-label">OVERVIEW</p>
       <div class="topic-map">
+        <a href="#cursor-guide"><span>00</span>Cursor 指南</a>
         <a href="#sensors"><span>01</span>触觉传感器</a>
         <a href="#visuotactile"><span>02</span>视触觉原理</a>
         <a href="#hardware"><span>03</span>传感器构成</a>
